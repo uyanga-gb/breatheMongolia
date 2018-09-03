@@ -4,6 +4,7 @@ import { browserHistory, IndexRoute } from 'react-router';
 import HomePage from './homepage';
 import Footer from './footer-component/footer';
 import styles from '../style/styles.css';
+import HomepageLayout from "./homepage"
 
 import NavBar from "./header-component/navbar"
 import MiddleNav from "./middle-nav/middle-nav";
@@ -16,9 +17,11 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div>
-            <NavBar/>
-            <MiddleNav/>
-            <Route exact path="/" component={HomePage} />
+            {/*<NavBar />*/}
+          <HomepageLayout />
+
+          {/*<MiddleNav/>*/}
+            {/*<Route exact path="/" component={HomePage} />*/}
               <Route exact path="/why" component={WhyWeCantBreathe}/>
               <Route exact path="/tried" component={WeTriedToFightIt}/>
         </div>
