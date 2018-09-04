@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 // import { Menu, Segment, Button, Image } from 'semantic-ui-react'
 // import HomepageHeading from "./education"
 import PropTypes from 'prop-types'
-
+import NavBar from "./header-component/navbar"
+import styles from '../style/styles.css';
+import Footer from "./footer-component/footer"
+import Signup from "./footer-component/signup"
 import {
   Button,
   Container,
@@ -20,93 +23,6 @@ import {
   IconGroup
 } from 'semantic-ui-react'
 
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as='h2'
-      content='Education'
-      inverted
-      style={{
-        fontSize: mobile ? '1.5em' : '2.5em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1em' : '3em',
-      }}
-    />
-  </Container>
-)
-
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
-
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
-class DesktopContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-
-  // hideFixedMenu = () => this.setState({ fixed: false })
-  // showFixedMenu = () => this.setState({ fixed: true })
-
-  render() {
-    const { children } = this.props
-    const { fixed } = this.state
-
-    return (
-      <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-        <Visibility
-          once={false}
-          onBottomPassed={this.showFixedMenu}
-          onBottomPassedReverse={this.hideFixedMenu}
-        >
-          <Segment
-            inverted
-            textAlign='center'
-            style={{ minHeight: 340, padding: '1em 0em', background: 'rgba(0,0,0,0.50)' }}
-            vertical
-          >
-            <Menu
-              fixed={fixed ? 'top' : null}
-              inverted={!fixed}
-              secondary={!fixed}
-              size='large'
-            >
-              <Container>
-                <Menu.Item as='a' header position='left'>
-                  <Image size='mini' src='' style={{ marginRight: '2em' }} />
-                  Breathe Mongolia
-                </Menu.Item>
-                <Menu.Item as='a' active position='right'>
-                  Home
-                </Menu.Item>
-                <Menu.Item as='a'>Our Story</Menu.Item>
-                <Menu.Item as='a'>Education</Menu.Item>
-                <Menu.Item as='a'>Facts</Menu.Item>
-                <Menu.Item >
-                  <Button style={{ borderRadius: 24 }}>
-                    Get Involved
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
-            <HomepageHeading />
-          </Segment>
-        </Visibility>
-
-        {children}
-      </Responsive>
-    )
-  }
-}
-
-DesktopContainer.propTypes = {
-  children: PropTypes.node,
-}
 
 const WeCantBreatheHeading = ({ mobile }) => (
   <Container text>
@@ -152,7 +68,7 @@ WhyWeCantBreatheHeading.propTypes = {
 
 const ResponsiveContainer = ({ children }) => (
   <div>
-    <DesktopContainer>{children}</DesktopContainer>
+    <NavBar>{children}</NavBar>
   </div>
 )
 
@@ -252,18 +168,18 @@ const HomepageLayout = () => (
               Most vulnerable group of residents
             </Header>
           </Grid.Column>
-          <Grid.Column style={{ background: '#C5CAD0' }}>
-            <Image avatar src='' />
+          <Grid.Column style={{ background: '#C5CAD0', padding: 0 }}>
+            <Image src='src/assets/Bitmap.png' fluid />
             <p style={{ fontWeight: 'bold' }}>Children Under 5</p>
             <p>In 2014, 178 children under 1 and 218 children under 5 died from respiratory illnesses.</p>
           </Grid.Column>
-          <Grid.Column style={{  background: '#ABAFB4' }}>
-            <Image avatar src='' />
+          <Grid.Column style={{ background: '#ABAFB4', padding: 0 }}>
+            <Image src='src/assets/Bitmap 2.png' fluid />
             <p style={{ fontWeight: 'bold' }}>Pregnant Women</p>
             <p>Birth defects and miscarriage are 3.6x higher in the winter. 66.9% of those hospitalized due to air pollution related diseases live in ger districts.</p>
           </Grid.Column>
-          <Grid.Column style={{ background: '#C5CAD0' }}>
-            <Image avatar src='' />
+          <Grid.Column style={{ background: '#C5CAD0', padding: 0 }}>
+            <Image src='src/assets/Bitmap 3.png' fluid />
             <p style={{ fontWeight: 'bold' }}>Elderly</p>
             <p>Need a fact here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
           </Grid.Column>
@@ -272,46 +188,9 @@ const HomepageLayout = () => (
     </Segment>
 
     <WhyWeCantBreatheHeading />
+    <Signup/>
+    <Footer/>
 
-    <Segment inverted vertical style={{ padding: '5em 0em', background: 'rgba(0,0,0,0.50)' }}>
-      <Container>
-        <Grid inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={5}>
-              <Header as='h4' inverted>
-                ©. Breathe Mongolia  2018
-              </Header>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Follow Us!' />
-              <List link inverted>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as='h4' content='Column Title' />
-              <List link inverted>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-                <List.Item as='a'>Lorem ipsum dolor</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header as='h4' inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could help re-engage users.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
   </ResponsiveContainer>
 )
 export default HomepageLayout

@@ -1,1 +1,4 @@
-
+.ui.button.whiteButton {
+    background-color: white;
+    color: black;
+}
