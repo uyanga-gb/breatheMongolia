@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 // import { Menu, Segment, Button, Image } from 'semantic-ui-react'
 // import HomepageHeading from "./education"
 import PropTypes from 'prop-types'
-import NavBar from "./header-component/navbar"
-import styles from '../style/styles.css';
+import NavBar from "./header-component/Navbar"
+import MiddleMenu from "./header-component/middle-navbar"
 import Footer from "./footer-component/footer"
 import Signup from "./footer-component/signup"
 import {
@@ -68,18 +68,16 @@ WhyWeCantBreatheHeading.propTypes = {
 
 const ResponsiveContainer = ({ children }) => (
   <div>
-    <NavBar>{children}</NavBar>
+    <NavBar>{children}</NavBar>a
   </div>
 )
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
-}
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <WeCantBreatheHeading />
-
+    {/*<Visibility onUpdate={this.handleUpdate}>*/}
+      {/*<Wireframe />*/}
+    {/*</Visibility>*/}
     <Segment style={{ padding: '3em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
         <Grid.Row>
@@ -135,12 +133,12 @@ const HomepageLayout = () => (
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle' textAlign='left'>
         <Grid.Column width={9}>
-        <p>
-          The reason why PM2.5 is such a big problem is explained below, but in short, because Ulaanbaatar is the coldest capital in the world with abundant coal resources to suffice for the heat and electricity demand. PM2.5 is mainly produced from combustion of fuels. Hence, the problem is extremely seasonal
-        </p>
-        <p>
-          The highest recorded Air Quality Indexes in the last winter exceeded 2,000 (December 26, Bayankhoshuu, and few others). To put that into perspective, Beijing declares code red when AQI is above 500 for any 24 hour period. In any AQI above 500, you’re advised to avoid the outdoors.
-        </p>
+          <p>
+            The reason why PM2.5 is such a big problem is explained below, but in short, because Ulaanbaatar is the coldest capital in the world with abundant coal resources to suffice for the heat and electricity demand. PM2.5 is mainly produced from combustion of fuels. Hence, the problem is extremely seasonal
+          </p>
+          <p>
+            The highest recorded Air Quality Indexes in the last winter exceeded 2,000 (December 26, Bayankhoshuu, and few others). To put that into perspective, Beijing declares code red when AQI is above 500 for any 24 hour period. In any AQI above 500, you’re advised to avoid the outdoors.
+          </p>
         </Grid.Column>
         <Grid.Column width={5} style={{borderTop: '3px solid black', backgroundColor: '#F3F7FC'}}>
           <p>AQI stands for Air Quality Index, which is a standardized measurement for the general quality of the atmosphere in terms of danger to human health.</p>
@@ -186,6 +184,7 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
+    <MiddleMenu/>
 
     <WhyWeCantBreatheHeading />
     <Signup/>
@@ -193,4 +192,8 @@ const HomepageLayout = () => (
 
   </ResponsiveContainer>
 )
+
+ResponsiveContainer.propTypes = {
+  children: PropTypes.node,
+}
 export default HomepageLayout
