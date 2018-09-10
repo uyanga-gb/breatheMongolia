@@ -9,6 +9,7 @@ import NavBar from "./components/header-component/Navbar"
 import WhyWeCantBreathe from "./components/why-we-cant-breathe/why-we-cant-breathe";
 import WeTriedToFightIt from "./components/we-tried-to-fight-it/we-tried-to-fight-it";
 
+import 'styling/semantic.less'
 
 export default class App extends Component {
   render() {

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-// import { Menu, Segment, Button, Image } from 'semantic-ui-react'
-// import HomepageHeading from "./education"
+
 import PropTypes from 'prop-types'
 import {Visibility, Segment, Menu, Responsive, Container, Button, Image, Header} from "semantic-ui-react";
-import NavbarChildren from './NavbarChildren'
-import NavbarDesktop from './NavbarDesktop'
+import logo from 'assets/logo.png'
+import * as styles from './Navbar.less'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -61,7 +60,7 @@ export default class NavBar extends Component {
             >
               <Container>
                 <Menu.Item as='' header position='left'>
-                  <Image size='tiny' src='src/assets/logo.png' />
+                  <Image size='tiny' src={logo} />
                   Breathe Mongolia
                 </Menu.Item>
                 <Menu.Item as='a' active position='right'>
@@ -71,9 +70,9 @@ export default class NavBar extends Component {
                 <Menu.Item as='a'>Education</Menu.Item>
                 <Menu.Item as='a'>Facts</Menu.Item>
                 <Menu.Item >
-                  <Button style={{ borderRadius: 24 }}>
+                  <button className={styles.buttonWhite}>
                     Get Involved
-                  </Button>
+                  </button>
                 </Menu.Item>
               </Container>
             </Menu>

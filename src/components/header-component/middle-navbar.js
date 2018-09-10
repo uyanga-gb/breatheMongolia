@@ -5,6 +5,7 @@ export default class MiddleMenu extends Component {
   constructor(props) {
     super(props);
     this.handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
     this.state = {
       calculations: {
         direction: 'none',
@@ -34,7 +35,7 @@ export default class MiddleMenu extends Component {
     const { calculations, contextRef, activeItem } = this.state
     return (
       <div ref={this.handleContextRef}>
-        <Sticky context={contextRef}>
+        <Sticky context={contextRef} pushing>
           <Grid style={{textAlign:'center', background: 'rgba(226,226,226,1)'}}>
             <Grid.Row columns={4}>
               <Grid.Column name='cant_breathe' onClick={this.handleItemClick}>
