@@ -9,7 +9,7 @@ import Signup from "./footer-component/signup"
 import imgChildren from 'assets/children.png'
 import imgPregnant from 'assets/pregnant.png'
 import imgElderly from 'assets/elderly.png'
-import Quizes from './education/quizes'
+import QuizeCarousel from './quize-carousel/quize-carousel'
 import {
   Button,
   Container,
@@ -74,7 +74,7 @@ const HomepageMain = ({ mobile }) => (
         </p>
       </Grid.Column>
     </Grid>
-    <Quizes/>
+    <QuizeCarousel/>
   </Container>
 )
 
