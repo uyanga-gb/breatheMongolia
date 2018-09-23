@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import * as styles from "../header-component/Navbar.less";
-import { Image, Header, Grid} from "semantic-ui-react";
+import * as styles from "../../styles.less";
+import { Container, Icon, Image, Header, Grid} from "semantic-ui-react";
 
 const TakeQuiz = () => {
   return (
-    <Grid.Column width={8} style={{background: 'rgba(0,0,0,0.50)', color: 'white'}}>
+    <Grid.Column width={10} className={styles.main_background}>
       <Header as='h3' content='Find out how exposed you are' style={{color: 'white'}}>
       </Header>
       <p>

@@ -12,8 +12,8 @@ class Slide extends Component {
   handleChange = (e, { value }) => this.setState({ value })
   render() {
     return (
-      <Grid class={styles.slide}>
-        <Grid.Column width={8} style={{background: 'rgba(0,0,0,0.50)', color: 'white'}}>
+      <Grid className={styles.slide}>
+        <Grid.Column width={8} className={styles.main_background}>
           <Header as='h3' content='Quiz 1' style={{color: 'white'}}>
           </Header>
           <p>

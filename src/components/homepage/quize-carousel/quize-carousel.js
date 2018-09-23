@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Visibility, Segment, Icon, Responsive, Container, Button, Image, Header, Grid, List} from "semantic-ui-react";
-import * as styles from "../header-component/Navbar.less";
+import * as styles from "../../styles.less";
 import Slides from "./slides"
 import TakeQuiz from "./take-quiz"
 class QuizeCarousel extends Component {
@@ -39,7 +39,7 @@ class QuizeCarousel extends Component {
 
   render() {
     return (
-      <Segment style={{padding: '6em 0em'}} vertical>
+      <Segment vertical>
         <Header as='h3' content='Learn more about how you can protect yourself' style={{padding: '2em 0em'}}>
         </Header>
         <Grid
@@ -47,13 +47,15 @@ class QuizeCarousel extends Component {
             transform: `translateX(${this.state.translateValue}px)`,
             transition: 'transform ease-out 0.45s'
           }}>
+          <TakeQuiz />
+
           {/*<TakeQuiz />*/}
 
-          {
-            this.state.slides.map((slide, i) => (
-              <Slides key={i} slide={slide} />
-            ))
-          }
+          {/*{*/}
+            {/*this.state.slides.map((slide, i) => (*/}
+              {/*<Slides key={i} slide={slide} />*/}
+            {/*))*/}
+          {/*}*/}
           <Grid.Column>
             <Grid.Row>
               <p>1/5</p>

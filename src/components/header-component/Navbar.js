@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {Visibility, Segment, Menu, Responsive, Container, Button, Image, Header, Icon} from "semantic-ui-react";
 import logo from 'assets/logo.png'
-import * as styles from './Navbar.less'
+import * as styles from '../styles.less'
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -52,8 +52,7 @@ export default class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {}
-    // this.handleItemClick = this.handleItemClick.bind(this)
+    this.state = { activeItem: 'home'}
     this.handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   }
@@ -72,7 +71,7 @@ export default class NavBar extends Component {
           <Segment
             inverted
             textAlign='center'
-            style={{ minHeight: 340, padding: '1em 0em', background: 'rgba(0,0,0,0.50)' }}
+            style={{ background: 'rgba(0,0,0,0.50)' }}
             vertical
           >
             <Menu
@@ -80,20 +79,21 @@ export default class NavBar extends Component {
               inverted={!fixed}
               secondary={!fixed}
               size='large'
+              pointing style={{border: 'none', height: '3em'}}
             >
               <Container>
-                <Menu.Item as='' header position='left'>
+                <Menu.Item style={{alignSelf: 'center'}}>
                   <Image size='tiny' src={logo} />
                   Breathe Mongolia
                 </Menu.Item>
-                <Menu.Item as='a' active position='right'>
+                <Menu.Item as='a' position='right' name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>Our Story</Menu.Item>
-                <Menu.Item as='a'>Education</Menu.Item>
-                <Menu.Item as='a'>Facts</Menu.Item>
-                <Menu.Item >
-                  <button className={styles.buttonWhite}>
+                <Menu.Item as='a' name='our_story' active={activeItem === 'our_story'} onClick={this.handleItemClick}>Our Story</Menu.Item>
+                <Menu.Item as='a' name='education' active={activeItem === 'education'} onClick={this.handleItemClick}>Education</Menu.Item>
+                <Menu.Item as='a' name='facts' active={activeItem === 'facts'} onClick={this.handleItemClick}>Facts</Menu.Item>
+                <Menu.Item style={{alignSelf: 'center'}}>
+                  <button className={styles.buttonWhite} >
                     Get Involved
                   </button>
                 </Menu.Item>
