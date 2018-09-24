@@ -25,6 +25,7 @@ import {
   Sticky
 } from 'semantic-ui-react'
 import * as styles from "../styles.less";
+import WhyWeCantBreathe from "./why-we-cant-breathe/why-we-cant-breathe";
 
 const EducationHeading = ({ mobile }) => (
   <Container fluid className={styles.main_background} style={{padding: '6.5em 28.5em 5em 28.5em'}}>
@@ -84,28 +85,10 @@ WhyWeCantBreatheHeading.propTypes = {
   mobile: PropTypes.bool,
 }
 
-const ResponsiveContainer = ({ children }) => (
-  <div>
-    <EducationHeading />
-    <WeCantBreatheHeading />
-    {/*<HomepageMain>{children}</HomepageMain>*/}
-    <WeCantBreatheHeading />
-  </div>
-)
 
-export default class Education extends Component {
-  constructor(props){
-    super(props)
-    this.state = {}
 
-    this.handleUpdate = contextRef => this.setState({ contextRef })
-  }
-  render() {
-    const { calculations, contextRef, activeItem } = this.state
 
-    return (
-      <ResponsiveContainer>
-        <WeCantBreatheHeading />
+const EducationMain = ({ mobile }) => (
           <div ref={this.handleUpdate}>
 
         <Segment style={{padding: '3em 0em'}} vertical>
@@ -113,8 +96,8 @@ export default class Education extends Component {
           <Grid.Row>
           <Grid.Column textAlign='center'>
           <p style={{fontSize: '1.33em'}}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </Grid.Column>
         </Grid.Row>
         <Grid.Row textAlign='center'>
@@ -141,24 +124,7 @@ export default class Education extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <Sticky context={contextRef} pushing>
-          <Grid style={{textAlign:'center', background: 'rgba(226,226,226,1)'}}>
-            <Grid.Row columns={4}>
-              <Grid.Column name='cant_breathe' onClick={this.handleItemClick}>
-                We Can't Breathe
-              </Grid.Column>
-              <Grid.Column onClick={this.handleItemClick}>
-              Why We Can't Breathe
-              </Grid.Column>
-              <Grid.Column onClick={this.handleItemClick}>
-                We Tried to Fight It
-              </Grid.Column>
-              <Grid.Column onClick={this.handleItemClick}>
-              Let's Do Something About It
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Sticky>
+
         <Segment style={{padding: '0em', backgroundColor: '#F3F7FC'}} >
           <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
@@ -239,10 +205,51 @@ export default class Education extends Component {
           </Grid>
         </Segment>
       </div>
-      </ResponsiveContainer>
-      )
-    }
+)
+
+const ResponsiveContainer = ({ children }) => (
+  <div>
+    <EducationHeading />
+    <WeCantBreatheHeading />
+    <EducationMain>{children}</EducationMain>
+    <WhyWeCantBreatheHeading/>
+    {/*<WhyWeCantBreathe />*/}
+  </div>
+)
+export default class EducationLayout extends Component {
+  constructor(props){
+    super(props)
+    this.state = {}
+
+    this.handleUpdate = contextRef => this.setState({ contextRef })
   }
+  render() {
+    return (
+      <ResponsiveContainer>
+        {/*<EducationHeading />*/}
+        {/*<Sticky context={contextRef} pushing>*/}
+          {/*<Grid style={{textAlign:'center', background: 'rgba(226,226,226,1)'}}>*/}
+            {/*<Grid.Row columns={4}>*/}
+              {/*<Grid.Column name='cant_breathe' onClick={this.handleItemClick}>*/}
+                {/*We Can't Breathe*/}
+              {/*</Grid.Column>*/}
+              {/*<Grid.Column onClick={this.handleItemClick}>*/}
+                {/*Why We Can't Breathe*/}
+              {/*</Grid.Column>*/}
+              {/*<Grid.Column onClick={this.handleItemClick}>*/}
+                {/*We Tried to Fight It*/}
+              {/*</Grid.Column>*/}
+              {/*<Grid.Column onClick={this.handleItemClick}>*/}
+                {/*Let's Do Something About It*/}
+              {/*</Grid.Column>*/}
+            {/*</Grid.Row>*/}
+          {/*</Grid>*/}
+        {/*</Sticky>*/}
+        <EducationMain/>
+      </ResponsiveContainer>
+    )
+  }
+}
 
 ResponsiveContainer.propTypes = {
   children: PropTypes.node,
