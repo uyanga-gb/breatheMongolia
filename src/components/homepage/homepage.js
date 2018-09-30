@@ -17,7 +17,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container fluid className={styles.main_background} style={{padding: '9.5em 28.5em 1em 28.5em'}}>
     <Header
       as='h2'
-      content='Homepage title'
+      content='Together we can protect our future'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.5em',
@@ -29,7 +29,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header as='h5'
             inverted
-            content='Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede link mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.rttitor eu, consequat vitae, eleifend ac, enim.'
+            content='Once called the Land of the Eternal Blue Sky, Mongolia’s capital city, Ulaanbaatar, and province centers are facing severe air pollution. Covered by a blanket of deadly, toxic smog 9 months out of the year; 2 in 10 deaths in Ulaanbaatar are attributed to air pollution and miscarriages are not considered out of the norm. Help us change it!'
             style={{
               fontSize: mobile ? '0.5em' : '1em',
               fontWeight: 'normal',
