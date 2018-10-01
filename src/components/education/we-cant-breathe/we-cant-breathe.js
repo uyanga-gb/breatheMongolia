@@ -6,6 +6,7 @@ import * as styles from "../../styles.less";
 import imgChildren from 'assets/children.png'
 import imgPregnant from 'assets/pregnant.png'
 import imgElderly from 'assets/elderly.png'
+import countries from 'assets/air_pol_temp.jpg'
 
 
 const WeCantBreatheHeading = ({ mobile }) => (
@@ -110,7 +111,7 @@ class WeCantBreathe extends Component {
           </Grid>
         </Segment>
         <Segment basic className={styles.paddedContainer}>
-          <Image src={imgPregnant} size='huge' centered/>
+          <Image src={countries} size='huge' centered/>
           <p className={styles.paddedContainer}>
             Exposure to PM2.5, fine particulate matter, and PM10 are strongly associated with mortality attributable to ischemic heart disease, dysrhythmias, heart failure, and cardiac arrest. 10 micrograms/cubic meter elevation in PM2.5 was associated in a study with an 8% to 18% increases in mortality risk, and 8% increase in lung cancer mortality risk. (C. Arden Pope, 2002)
           </p>

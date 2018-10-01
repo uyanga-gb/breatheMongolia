@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import WeCantBreathe from './we-cant-breathe/we-cant-breathe'
 import WhyWeCantBreathe from "./why-we-cant-breathe/why-we-cant-breathe";
+import WeTriedToFightIt from "./we-tried-to-fight-it/we-tried-to-fight-it";
 import * as styles from "../styles.less";
 import {Link} from "react-router-dom";
 
@@ -82,6 +83,7 @@ export default class EducationLayout extends Component {
         <EducationHeading />
         <EducationMain/>
         <WhyWeCantBreathe/>
+        <WeTriedToFightIt/>
       </div>
 
     )
