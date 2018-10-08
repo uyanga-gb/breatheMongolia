@@ -37,7 +37,7 @@ class WeTriedToFightIt extends Component {
           </p>
           <p className={styles.paddedContainer}>We need a short paragraph so segway into the following bit of information, something like “As a country, Mongolia has implemented measures to help combat air pollution. Learn more about the expected income from some of these measures, and the actual impact it had in the Mongolian communities lorem ipsum dolor adet.</p>
         </Segment>
-        {/*<ImplementedMeasures />*/}
+        <ImplementedMeasures />
       </div>
     )
   }
